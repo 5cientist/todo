@@ -12,6 +12,21 @@
     />
   </head>
   <body>
+
+    <div>
+        <input type="text">
+        <button onclick="addItem(this)">Add</button>
+    </div>
+    <script type="text/javascript">
+
+            function addItem(arg){
+                    arg.parentNode.insertAdjacentHTML('afterend', '<div><input type="text"> <button onclick="addItem(this)">Add</button><button onclick="removeItem(this)">Remove</button></div>');
+            }
+            function removeItem(arg){
+                    arg.parentNode.parentNode.removeChild(arg.parentNode);
+            }
+
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
